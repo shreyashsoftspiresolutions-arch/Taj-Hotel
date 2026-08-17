@@ -1,0 +1,113 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* =========================
+   CSS CUSTOM PROPERTIES
+========================= */
+:root{
+  /* Primary Palette */
+  --gold: #D4AF37;
+  --gold-light: #E8CC6E;
+  --gold-dark: #B8961F;
+  --gold-glow: rgba(212,175,55,.25);
+
+  /* Neutrals */
+  --black: #0a0a0a;
+  --dark: #111111;
+  --dark-2: #1a1a1a;
+  --dark-3: #222222;
+  --gray-900: #333333;
+  --gray-700: #555555;
+  --gray-500: #777777;
+  --gray-400: #999999;
+  --gray-300: #bbbbbb;
+  --gray-200: #dddddd;
+  --gray-100: #eeeeee;
+  --off-white: #f8f6f3;
+  --cream: #faf9f6;
+  --white: #ffffff;
+
+  /* Accents */
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", "Poppins", sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.10);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,.14);
+  --shadow-xl: 0 24px 60px rgba(0,0,0,.18);
+  --shadow-gold: 0 8px 30px rgba(212,175,55,.20);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(.25,.46,.45,.94);
+  --ease-bounce: cubic-bezier(.68,-.55,.27,1.55);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 25px;
+  --radius-pill: 50px;
+}
+
+/* =========================
+   RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--dark-3);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* =========================
+   SELECTION
+========================= */
+::selection{
+  background:var(--gold);
+  color:var(--white);
+}
+
+::-moz-selection{
+  background:var(--gold);
+  color:var(--white);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:var(--dark);
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--gold);
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:var(--gold-light);
+}

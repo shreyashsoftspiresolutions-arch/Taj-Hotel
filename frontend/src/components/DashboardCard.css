@@ -1,0 +1,29 @@
+.dashboard-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+transition:.3s;
+cursor:pointer;
+text-align:center;
+}
+
+.dashboard-card:hover{
+transform:translateY(-8px);
+}
+
+.card-icon{
+font-size:40px;
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.dashboard-card h4{
+color:#777;
+margin-bottom:10px;
+}
+
+.dashboard-card h2{
+font-size:35px;
+color:#222;
+}

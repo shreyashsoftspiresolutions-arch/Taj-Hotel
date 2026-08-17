@@ -1,0 +1,42 @@
+# Project Changes Log
+*This file keeps track of all the updates we make to the project.*
+
+## 1. Database Creation
+- Created a `database.sql` file containing all the necessary tables (users, hotels, rooms, bookings, foods, food_orders, contacts) so the database could be easily set up in XAMPP.
+
+## 2. Backend Fixes (Server & API)
+- Fixed the backend to use modern JavaScript (added `"type": "module"` in `package.json`).
+- Updated the `room`, `food`, and `admin` API routes and controllers so they work without crashing the server.
+- Connected these routes inside `server.js` so the frontend can successfully communicate with them.
+
+## 3. Frontend Fixes (Removing Dummy Data)
+- **Login Page (`Login.jsx`)**: Removed the hardcoded admin email/password. It now securely checks login details with the backend database.
+- **Rooms Page (`Rooms.jsx`)**: Removed the massive list of fake rooms. It now automatically fetches and displays real rooms directly from the database.
+- **Food Page (`Food.jsx`)**: Removed the fake food menu. It now fetches the live menu from the database.
+- **Admin Dashboard (`Dashboard.jsx`)**: Removed the fake numbers and local storage data. It now displays actual live statistics (total users, bookings, revenue, etc.) straight from the database.
+- **Admin Profile (`AdminProfile.jsx`)**: Removed the dummy hardcoded email and name. The profile now securely fetches and displays the actual name and email of the currently logged-in admin user via a JWT token.
+
+## 4. Admin User Creation & Public Registration
+- Securely created the first Admin user directly into the database so the login page can be tested. 
+  - **Email:** `admin@gmail.com`
+  - **Password:** `admin123`
+- **Registration Page (`Register.jsx`)**: Updated the public Registration page to securely save new customer accounts directly into the database using `axios` (instead of dummy `localStorage`).
+- **Auth Flow Links**: Added clickable links switching between the Login and Register pages.
+- **Form Autofill Fix**: Added `autoComplete` attributes to the Login and Register forms to prevent browsers (like Chrome) from annoyingly auto-filling saved passwords.
+
+## 5. Rooms Management Module
+- **Backend Setup (`roomController.js`, `roomRoutes.js`)**: Added missing `POST`, `PUT`, and `DELETE` routes to allow creating, updating, and removing rooms from the database.
+- **Frontend Upgrade (`RoomsAdmin.jsx`)**: Completely rewrote the Admin Rooms panel form. It now perfectly aligns with the required luxury data fields (Name, Price, Rating, Guests, Size, Image) and uses `axios` to live-sync with the backend API instead of `localStorage`.
+
+## 6. Food Management Module
+- **Backend Setup (`foodController.js`, `foodRoutes.js`)**: Added missing `POST`, `PUT`, and `DELETE` routes to allow creating, updating, and removing food items.
+- **Frontend Upgrade (`FoodAdmin.jsx`)**: Replaced the static, hardcoded HTML table with a dynamic React form. Removed the fake "Category" column to match the database schema precisely, and wired it up to `axios` so admins can easily manage the real live menu.
+
+## 7. Hotel Management Module
+- **Backend Fixes (`server.js`, `hotelController.js`, `hotelRoutes.js`)**: Uncommented the hotel routes to enable them. Stripped out the complex image-upload middleware (`multer`) so the server can accept lightweight JSON data.
+- **Frontend Upgrade (`Hotels.jsx`)**: Removed the `localStorage` logic and replaced it with live `axios` calls (`GET`, `POST`, `PUT`, `DELETE`). It now saves hotel data (Name, Location, Price, Rating) directly to the database.
+
+## 8. Image Upload Integration (Multer)
+- **Backend Setup (`server.js`)**: Configured express to serve static files from the `uploads/` directory.
+- **Backend Routes & Controllers (`rooms`, `hotels`, `foods`)**: Re-integrated the `multer` middleware (`upload.single('image')`) to handle incoming file uploads and save the filenames to the database.
+- **Frontend Upgrade (`RoomsAdmin.jsx`, `Hotels.jsx`, `FoodAdmin.jsx`)**: Upgraded all three admin panels to use `<input type="file" />` and `FormData` for `axios` requests, allowing admins to upload and preview images for Rooms, Hotels, and Food items.

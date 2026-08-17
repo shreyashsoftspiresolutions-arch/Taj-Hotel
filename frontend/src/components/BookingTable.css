@@ -1,0 +1,43 @@
+.booking-table{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+}
+
+.booking-table h2{
+
+margin-bottom:20px;
+
+}
+
+.booking-table table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.booking-table th{
+
+background:#111;
+
+color:white;
+
+padding:15px;
+
+}
+
+.booking-table td{
+
+padding:15px;
+
+border-bottom:1px solid #eee;
+
+}
