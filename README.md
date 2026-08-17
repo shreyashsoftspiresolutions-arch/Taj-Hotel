@@ -97,3 +97,5 @@ npm run dev
 ## 📄 License
 
 ISC License
+
+**Project By ~Rutuja Chandgude & Shreyash Anawane**
